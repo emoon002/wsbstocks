@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
 import './App.css';
+import StockCards from './StockCards';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const API_URL = 'https://tradestie.com/api/v1/apps/reddit';
+
+const App = () => {
+
+    const [stocks, setStocks] = useState([]);
+
+    const getStocks = async () => {
+      const response = await fetch(API_URL);
+      const data = await response.json();
+      setStocks(data);
+    }
+
+    useEffect(() => {
+      getStocks();
+    })
+    
+    return (
+      <div className="App">
+        <div className='wsb-title'>
+          <img src='https://upload.wikimedia.org/wikipedia/en/f/f0/WallStreetBets.png'alt='wallstreetbets'/>
+          <h1 className='title'><span className='title-span'>Top 50</span> Stocks</h1>
+        </div>
+        <div className="container">
+          {stocks.map((stock) => (
+            <StockCards stock={stock} />
+          ))}
+        </div>
+      </div>
+    );
 }
 
 export default App;
