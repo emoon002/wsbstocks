@@ -29,6 +29,7 @@ const App = () => {
             <StockCards stock={stock} />
           ))}
         </div>
+        <footer className='footer'>&copy; Copyright 2022 Evan Moon</footer>
       </div>
     );
 }
