@@ -19,6 +19,7 @@ const StockCards = ({stock}) => {
                     <p>Comments: {stock.no_of_comments}</p>
                     <p>Sentiment: {stock.sentiment}</p>
                     <p>Sentiment Score: {stock.sentiment_score}</p>
+                    <a href={`https://finance.yahoo.com/quote/${stock.ticker}`}>Quote</a>
                 </div>
             </div>
         ) : (
@@ -37,6 +38,7 @@ const StockCards = ({stock}) => {
                     <p>Comments: {stock.no_of_comments}</p>
                     <p>Sentiment: {stock.sentiment}</p>
                     <p>Sentiment Score: {stock.sentiment_score}</p>
+                    <a href={`https://finance.yahoo.com/quote/${stock.ticker}`}>Quote</a>
                 </div>
             </div>
         )}
