@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/wsbstocks/static/css/main.3902b998.css",
+    "main.js": "/wsbstocks/static/js/main.1b8ef279.js",
+    "index.html": "/wsbstocks/index.html",
+    "main.3902b998.css.map": "/wsbstocks/static/css/main.3902b998.css.map",
+    "main.1b8ef279.js.map": "/wsbstocks/static/js/main.1b8ef279.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3902b998.css",
+    "static/js/main.1b8ef279.js"
+  ]
+}
