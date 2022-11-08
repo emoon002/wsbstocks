@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import StockCards from './StockCards';
 
-const API_URL = 'https://tradestie.com/api/v1/apps/reddit';
+const API_URL = 'https://api.allorigins.win/raw?url=https://tradestie.com/api/v1/apps/reddit';
 
 const App = () => {
 
@@ -15,7 +15,11 @@ const App = () => {
     }
 
     useEffect(() => {
-      getStocks();
+      try {
+        getStocks();
+      } catch (error) {
+        console.log(error);
+      }
     }, []);
     
     return (
