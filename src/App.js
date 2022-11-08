@@ -16,7 +16,7 @@ const App = () => {
 
     useEffect(() => {
       getStocks();
-    })
+    }, []);
     
     return (
       <div className="App">
